@@ -23,7 +23,7 @@ public class SaveUtility {
 		return this;
 	}
 
-	public string Read(string in_key) => data[in_key].ToString();
+	public T Read<T>(string in_key) => data[in_key] is T ? (T) data[in_key] : default;
 
 	// should be async?
 	public void Save(string filePath, string fileName) {
